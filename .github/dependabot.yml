@@ -7,9 +7,9 @@ updates:
     time: "10:00"
   open-pull-requests-limit: 10
   reviewers:
-  - fedekunze
-  - khoslaventures
-  - danburck
+  - chengwenxi
+  - wukongcheng
+  - FletcherMan
   labels:
   - dependencies
 - package-ecosystem: docker
@@ -19,9 +19,9 @@ updates:
     time: "10:00"
   open-pull-requests-limit: 10
   reviewers:
-  - fedekunze
-  - khoslaventures
-  - danburck
+  - chengwenxi
+  - wukongcheng
+  - FletcherMan
 - package-ecosystem: gomod
   directory: "/"
   schedule:
