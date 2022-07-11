@@ -16,7 +16,7 @@ import (
 
 func init() {
 	cfg := sdk.GetConfig()
-	cfg.SetBech32PrefixForAccount("bitos", "evmospub")
+	cfg.SetBech32PrefixForAccount("bitos", "bitospub")
 }
 
 func TestIsSupportedKeys(t *testing.T) {
@@ -72,7 +72,7 @@ func TestIsSupportedKeys(t *testing.T) {
 	}
 }
 
-func TestGetEvmosAddressFromBech32(t *testing.T) {
+func TestGetBitosAddressFromBech32(t *testing.T) {
 	testCases := []struct {
 		name       string
 		address    string
@@ -93,26 +93,26 @@ func TestGetEvmosAddressFromBech32(t *testing.T) {
 		},
 		{
 			"invalid address bytes",
-			"evmos1123",
+			"bitos1123",
 			"",
 			true,
 		},
 		{
 			"bitos address",
-			"evmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
-			"evmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"bitos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"bitos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
 			false,
 		},
 		{
 			"cosmos address",
 			"cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-			"evmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"bitos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
 			false,
 		},
 		{
 			"osmosis address",
 			"osmo1qql8ag4cluz6r4dz28p3w00dnc9w8ueuhnecd2",
-			"evmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"bitos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
 			false,
 		},
 	}

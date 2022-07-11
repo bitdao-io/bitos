@@ -30,7 +30,7 @@ import (
 // employee starts before mainnet launch (periodsCliff < lockupPeriod)
 
 // Example:
-// 21/10 Employee joins Evmos and vesting starts
+// 21/10 Employee joins Bitos and vesting starts
 // 22/03 Mainnet launch
 // 22/09 Cliff ends
 // 23/02 Lock ends

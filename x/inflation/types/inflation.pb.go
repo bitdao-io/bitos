@@ -27,7 +27,7 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 // InflationDistribution defines the distribution in which inflation is
 // allocated through minting on each epoch (staking, incentives, community). It
 // excludes the team vesting distribution, as this is minted once at genesis.
-// The initial InflationDistribution can be calculated from the Evmos Token
+// The initial InflationDistribution can be calculated from the Bitos Token
 // Model like this:
 // mintDistribution1 = distribution1 / (1 - teamVestingDistribution)
 // 0.5333333         = 40%           / (1 - 25%)
