@@ -10,6 +10,7 @@ updates:
   - chengwenxi
   - wukongcheng
   - FletcherMan
+  - bradyjoestar
   labels:
   - dependencies
 - package-ecosystem: docker
@@ -22,6 +23,7 @@ updates:
   - chengwenxi
   - wukongcheng
   - FletcherMan
+  - bradyjoestar
 - package-ecosystem: gomod
   directory: "/"
   schedule:
