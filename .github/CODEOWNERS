@@ -1,0 +1,15 @@
+# CODEOWNERS: https://help.github.com/articles/about-codeowners/
+
+# Primary (global) repo maintainers
+*       @guoshijiang  @silmaj
+
+# Documentation
+docs/ @guoshijiang
+
+# Bitos Modules
+x/epochs/ @guoshijiang
+x/erc20/ @guoshijiang
+x/fees/ @guoshijiang
+x/incentives/ @silmaj
+x/inflation/ @silmaj
+x/vesting/ @silmaj
