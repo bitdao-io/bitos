@@ -18,7 +18,7 @@ This documentation page is currently under work in progress.
 - Open Source Codebase: [https://github.com/bitos/bitos](https://github.com/bitos/bitos)
 - Website: [https://bitos.org/](https://bitos.org/)
 - Blog: [https://bitos.blog/](https://bitos.blog/)
-- Ethermint: [https://github.com/bitos/ethermint](https://github.com/bitos/ethermint)
+- Ethermint: [https://github.com/evmos/ethermint](https://github.com/evmos/ethermint)
 
 ## Workshops and Videos
 

@@ -6,7 +6,7 @@ order: 1
 
 Use the bitosJS library for connecting clients to bitos {synopsis}
 
-[`bitosjs`](https://github.com/bitdao-io/bitosjs) is a JavaScript and TypeScript client library for [bitos](https://github.com/bitos/bitos) and [Ethermint](https://github.com/bitos/ethermint) nodes.
+[`bitosjs`](https://github.com/bitdao-io/bitosjs) is a JavaScript and TypeScript client library for [bitos](https://github.com/bitos/bitos) and [Ethermint](https://github.com/evmos/ethermint) nodes.
 
 ## Functionalities
 
