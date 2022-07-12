@@ -46,7 +46,7 @@ interoperable with Ethereum. It's built using the [Cosmos SDK](https://github.co
 
 ## Installation
 
-For prerequisites and detailed build instructions please read the [Installation]() instructions. Once the dependencies are installed, run:
+For prerequisites and detailed build instructions please read the [Installation](https://github.com/bitdao-io/bitos/) instructions. Once the dependencies are installed, run:
 
 ```bash
 make install
@@ -56,15 +56,15 @@ Or check out the latest [release](https://github.com/bitdao-io/bitos/releases).
 
 ## Quick Start
 
-To learn how the Bitos works from a high-level perspective, go to the [Introduction]() section from the documentation. You can also check the instructions to [Run a Node]().
+To learn how the Bitos works from a high-level perspective, go to the [Introduction](https://github.com/bitdao-io/bitos/) section from the documentation. You can also check the instructions to [Run a Node]().
 
 ## Community
 
 The following chat channels and forums are a great spot to ask questions about Bitos:
 
-- [Bitnework Twitter]()
-- [Bitnework Discord]()
-- [Bitnework Forum]()
+- [Bitnework Twitter](https://github.com/bitdao-io/bitos/)
+- [Bitnework Discord](https://github.com/bitdao-io/bitos/)
+- [Bitnework Forum](https://github.com/bitdao-io/bitos/)
 
 ## Contributing
 
@@ -72,6 +72,5 @@ Looking for a good place to start contributing? Check out some [`good first issu
 
 For additional instructions, standards and style guides, please refer to the [Contributing](./CONTRIBUTING.md) document.
 
-## Careers
 
-See our open positions on [Cosmos Jobs](https://jobs.cosmos.network/project/bitos-d0sk1uxuh-remote/), [Notion](https://tharsis.notion.site), or feel free to [reach out](mailto:careers@thars.is) via email.
+
