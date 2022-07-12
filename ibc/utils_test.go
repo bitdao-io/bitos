@@ -14,7 +14,7 @@ import (
 
 func init() {
 	cfg := sdk.GetConfig()
-	cfg.SetBech32PrefixForAccount("bitos", "bitospub")
+	cfg.SetBech32PrefixForAccount("bit", "bitpub")
 }
 
 func TestGetTransferSenderRecipient(t *testing.T) {
@@ -55,7 +55,7 @@ func TestGetTransferSenderRecipient(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1",
-						Receiver: "bitos1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "bit1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "123456",
 					},
 				),
@@ -69,7 +69,7 @@ func TestGetTransferSenderRecipient(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "bitos1",
+						Receiver: "bit1",
 						Amount:   "123456",
 					},
 				),
@@ -78,48 +78,48 @@ func TestGetTransferSenderRecipient(t *testing.T) {
 			true,
 		},
 		{
-			"valid - cosmos sender, bitos recipient",
+			"valid - cosmos sender, bit recipient",
 			channeltypes.Packet{
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "bitos1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "bit1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "123456",
 					},
 				),
 			},
-			"bitos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
-			"bitos1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+			"bit1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"bit1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 			false,
 		},
 		{
-			"valid - bitos sender, cosmos recipient",
+			"valid - bit sender, cosmos recipient",
 			channeltypes.Packet{
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
-						Sender:   "bitos1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Sender:   "bit1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Receiver: "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
 						Amount:   "123456",
 					},
 				),
 			},
-			"bitos1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
-			"bitos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"bit1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+			"bit1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
 			false,
 		},
 		{
-			"valid - osmosis sender, bitos recipient",
+			"valid - osmosis sender, bit recipient",
 			channeltypes.Packet{
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "osmo1qql8ag4cluz6r4dz28p3w00dnc9w8ueuhnecd2",
-						Receiver: "bitos1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "bit1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "123456",
 					},
 				),
 			},
-			"bitos1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
-			"bitos1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+			"bit1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"bit1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 			false,
 		},
 	}
@@ -163,7 +163,7 @@ func TestGetTransferAmount(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "bitos1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "bit1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "",
 					},
 				),
@@ -177,7 +177,7 @@ func TestGetTransferAmount(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "bitos1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "bit1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "test",
 					},
 				),
@@ -191,7 +191,7 @@ func TestGetTransferAmount(t *testing.T) {
 				Data: transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
 						Sender:   "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-						Receiver: "bitos1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Receiver: "bit1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
 						Amount:   "10000",
 					},
 				),
