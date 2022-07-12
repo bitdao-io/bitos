@@ -24,7 +24,7 @@ Or check out the latest [release](https://github.com/bitdao-io/bitos).
 
 ## Quick Start
 
-To learn how the Bitos works from a high-level perspective, go to the [Introduction](https://github.com/bitdao-io/bitos/) section from the documentation. You can also check the instructions to [Run a Node]().
+To learn how the Bitos works from a high-level perspective, go to the [Introduction](https://github.com/bitdao-io/bitos/) section from the documentation. You can also check the instructions to [Run a Node](https://github.com/bitdao-io/bitos/).
 
 ## Community
 
@@ -34,6 +34,3 @@ To learn how the Bitos works from a high-level perspective, go to the [Introduct
 Looking for a good place to start contributing? Check out some [`good first issues`](https://github.com/bitdao-io/bitos/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
 
 For additional instructions, standards and style guides, please refer to the [Contributing](./CONTRIBUTING.md) document.
-
-
-
