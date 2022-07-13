@@ -7,6 +7,21 @@ parent:
   <h1> Bitos </h1>
 </div>
 
+<div align="center">
+  <a href="https://github.com/bitdao-io/bitos/releases/latest">
+    <img alt="Version" src="https://img.shields.io/github/tag/bitdao-io/bitos.svg" />
+  </a>
+  <a href="https://github.com/bitdao-io/bitos/blob/main/LICENSE">
+    <img alt="License: Apache-2.0" src="https://img.shields.io/github/license/bitdao-io/bitos.svg" />
+  </a>
+  <a href="https://pkg.go.dev/github.com/bitdao-io/bitos">
+    <img alt="GoDoc" src="https://godoc.org/github.com/bitdao-io/bitos?status.svg" />
+  </a>
+  <a href="https://goreportcard.com/report/github.com/bitdao-io/bitos">
+    <img alt="Go report card" src="https://goreportcard.com/badge/github.com/bitdao-io/bitos"/>
+  </a>
+</div>
+
 Bitos is a fully EVM-compatible subchain in the Bitnework ecosystem. It has no consensus, and the security is guaranteed by bitnetwork
 interoperable with Ethereum. It's built using the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk/) which runs on top of [Bitnework](https://github.com/bitdao-io/bitnetwork) interchain security.
 
