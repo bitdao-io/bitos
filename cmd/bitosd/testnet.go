@@ -6,7 +6,6 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
-	"net"
 	"os"
 	"path/filepath"
 
@@ -49,27 +48,27 @@ import (
 )
 
 var (
-	flagNodeDirPrefix     = "node-dir-prefix"
-	flagNumValidators     = "v"
-	flagOutputDir         = "output-dir"
-	flagNodeDaemonHome    = "node-daemon-home"
-	flagStartingIPAddress = "starting-ip-address"
-	flagEnableLogging     = "enable-logging"
-	flagRPCAddress        = "rpc.address"
-	flagAPIAddress        = "api.address"
-	flagPrintMnemonic     = "print-mnemonic"
+	flagNodeDirPrefix  = "node-dir-prefix"
+	flagNumValidators  = "v"
+	flagOutputDir      = "output-dir"
+	flagNodeDaemonHome = "node-daemon-home"
+	flagIPAddrs        = "ip-addresses"
+	flagEnableLogging  = "enable-logging"
+	flagRPCAddress     = "rpc.address"
+	flagAPIAddress     = "api.address"
+	flagPrintMnemonic  = "print-mnemonic"
 )
 
 type initArgs struct {
-	algo              string
-	chainID           string
-	keyringBackend    string
-	minGasPrices      string
-	nodeDaemonHome    string
-	nodeDirPrefix     string
-	numValidators     int
-	outputDir         string
-	startingIPAddress string
+	algo           string
+	chainID        string
+	keyringBackend string
+	minGasPrices   string
+	nodeDaemonHome string
+	nodeDirPrefix  string
+	numValidators  int
+	outputDir      string
+	ipAddresses    []string
 }
 
 type startArgs struct {
@@ -142,7 +141,7 @@ Example:
 			args.minGasPrices, _ = cmd.Flags().GetString(sdkserver.FlagMinGasPrices)
 			args.nodeDirPrefix, _ = cmd.Flags().GetString(flagNodeDirPrefix)
 			args.nodeDaemonHome, _ = cmd.Flags().GetString(flagNodeDaemonHome)
-			args.startingIPAddress, _ = cmd.Flags().GetString(flagStartingIPAddress)
+			args.ipAddresses, _ = cmd.Flags().GetStringSlice(flagIPAddrs)
 			args.numValidators, _ = cmd.Flags().GetInt(flagNumValidators)
 			args.algo, _ = cmd.Flags().GetString(flags.FlagKeyAlgorithm)
 
@@ -153,7 +152,7 @@ Example:
 	addTestnetFlagsToCmd(cmd)
 	cmd.Flags().String(flagNodeDirPrefix, "node", "Prefix the directory name for each node with (node results in node0, node1, ...)")
 	cmd.Flags().String(flagNodeDaemonHome, "bitosd", "Home directory of the node's daemon configuration")
-	cmd.Flags().String(flagStartingIPAddress, "192.168.0.1", "Starting IP address (192.168.0.1 results in persistent peers list ID0@192.168.0.1:46656, ID1@192.168.0.2:46656, ...)")
+	cmd.Flags().StringSlice(flagIPAddrs, []string{"192.168.0.1"}, "List of IP addresses to use (i.e. `192.168.0.1,172.168.0.1` results in persistent peers list ID0@192.168.0.1:46656, ID1@172.168.0.1)")
 	cmd.Flags().String(flags.FlagKeyringBackend, flags.DefaultKeyringBackend, "Select keyring's backend (os|file|test)")
 
 	return cmd
@@ -248,7 +247,8 @@ func initTestnetFiles(
 
 		nodeConfig.Moniker = nodeDirName
 
-		ip, err := getIP(i, args.startingIPAddress)
+		ip := args.ipAddresses[i]
+		var err error
 		if err != nil {
 			_ = os.RemoveAll(args.outputDir)
 			return err
@@ -485,30 +485,6 @@ func collectGenFiles(
 	}
 
 	return nil
-}
-
-func getIP(i int, startingIPAddr string) (ip string, err error) {
-	if len(startingIPAddr) == 0 {
-		ip, err = sdkserver.ExternalIP()
-		if err != nil {
-			return "", err
-		}
-		return ip, nil
-	}
-	return calculateIP(startingIPAddr, i)
-}
-
-func calculateIP(ip string, i int) (string, error) {
-	ipv4 := net.ParseIP(ip).To4()
-	if ipv4 == nil {
-		return "", fmt.Errorf("%v: non ipv4 address", ip)
-	}
-
-	for j := 0; j < i; j++ {
-		ipv4[3]++
-	}
-
-	return ipv4.String(), nil
 }
 
 // startTestnet starts an in-process testnet
