@@ -453,7 +453,7 @@ func NewBitos(
 
 	app.GovKeeper = *govKeeper.SetHooks(
 		govtypes.NewMultiGovHooks(
-			// app.ClaimsKeeper.Hooks(),
+		// app.ClaimsKeeper.Hooks(),
 		),
 	)
 
@@ -502,8 +502,8 @@ func NewBitos(
 
 	// create IBC module from bottom to top of stack
 	var transferStack porttypes.IBCModule
-
-	transferStack = transfer.NewIBCModule(app.TransferKeeper)
+	// wrap transfer ibc module with erc20 additional process logic
+	transferStack = erc20.NewIBCMiddleware(app.Erc20Keeper, transfer.NewIBCModule(app.TransferKeeper))
 
 	// Create static IBC router, add transfer route, then set and seal it
 	ibcRouter := porttypes.NewRouter()

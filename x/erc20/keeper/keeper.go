@@ -2,6 +2,7 @@ package keeper
 
 import (
 	"fmt"
+	porttypes "github.com/cosmos/ibc-go/v3/modules/core/05-port/types"
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -20,6 +21,7 @@ type Keeper struct {
 	accountKeeper types.AccountKeeper
 	bankKeeper    types.BankKeeper
 	evmKeeper     types.EVMKeeper
+	ics4Wrapper   porttypes.ICS4Wrapper
 }
 
 // NewKeeper creates new instances of the erc20 Keeper
