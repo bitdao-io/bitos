@@ -1,6 +1,6 @@
 module github.com/bitdao-io/bitos
 
-go 1.18
+go 1.23
 
 require (
 	github.com/armon/go-metrics v0.4.0
@@ -25,7 +25,7 @@ require (
 	go.opencensus.io v0.23.0
 	google.golang.org/genproto v0.0.0-20220711200234-e2551ce405a2
 	google.golang.org/grpc v1.47.0
-	google.golang.org/protobuf v1.28.0
+	google.golang.org/protobuf v1.36.11
 )
 
 require (
